@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steph Bellwod</title>
+    <title>Steph Bellwood</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="book.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,42 +13,199 @@
 <body>
     <nav>
         <h3>Steph Bellwood</h3>
-        <p>Featured</p>
-        <p>Books</p>
-        <p>About me</p>
-        <p>Contact</p>
+        <!-- <p onclick="scrollToSection('featured')">Featured</p> -->
+        <p onclick="scrollToSection('books')">Books</p>
+        <p onclick="scrollToSection('about')">About me</p>
+        <p onclick="scrollToSection('contact')">Contact</p>
     </nav>
     <section id="splash">
         <div id="splash-left">
-            <h1 id="splash-heading">⠀<noscript>Hello, I'm Steph.</noscript></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis n</p>
+            <h1 id="splash-heading">⠀<noscript>Welcome to my site</noscript></h1>
+            <p>I'm Steph Bellwood, children's author and educator. Please explore and find out more about me and my work!</p>
             <div class="btn-group">
-                <button>See my books</button>
-                <button class="inverted">About me</button>
+                <button onclick="scrollToSection('books')">See my books</button>
+                <button onclick="scrollToSection('about')" class="inverted">About me</button>
             </div>
+            <img id="awards" src="awards.png" alt="LoveReading: Indie Books We Love Award">
         </div>
         <div id="splash-right">
-            <!-- <div></div> -->
-            <a class="book-container">
+            <a class="cover-container">
             <div class="book">
                 <img
-                alt="Wicked Wayward Women by Steph Bellwood"
-                src="cover.jpg"
+                alt="Steph's latest book"
+                src="book2.png"
                 />
             </div>
             </a>
         </div>
     </section>
-    <section id="recent">
-        <h2>My recent books: <img src="mogzilla.png" alt="Mogzilla"></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis n</p>
-        <div id="recent-row">
-            <div class="recent-book"></div>
-            <div class="recent-book"></div>
-            <div class="recent-book"></div>
-            <div class="recent-book"></div>
+    <img id="divider" src="divider.png">
+    <section id="books" class="recent">
+        <div class="recent-left">
+            <div style="background-image: url(book2.png)" alt="Front cover"></div>
+            <div style="background-image: url(book2.png)" alt="Back cover"></div>
+        </div>
+        <div class="recent-right">
+            <h3>New for October 2025!</h3>
+            <h2>Wrens: Racing Against Time</h2>
+            <p>The sequel to Wrens: Answering the Call continues Birdie's gripping adventures on the Front Line in France. It's now 1917 and tanks are amassing, battles are intensifying and the deadly Spanish flu is sweeping through the trenches… and just to complicate matters, there's a four-year-old French stowaway in a motorcycle sidecar! Can Birdie and her dispatch-rider friends dodge enemy shelling to reunite a mother and child - and can Birdie beat the tanks to deliver the most important message of her life? 
+<br>
+<br>
+                Meanwhile, listening to Birdie's story, her granddaughter Amy begins to discover more about her past… and it leaves her in a whirlwind of confusion. Is her family who she thought they were? And who is she? 
+<br>
+<br>
+                This novel is published by Mogzilla Books in October 2025.</p>
+            <button class="inverted" onclick='window.open("https://www.amazon.co.uk/WRENS-racing-against-time-2/dp/1914426118")'>Preorder now on Amazon</button>
+        </div>
+        <div id="quote">
+            <p>
+                <i>I think Wrens Racing Against Time is an amazing book that sends shivers through your body every read. It's a thrilling and exciting book about a group of girls who are in the Women's Royal Naval Service, and they go through life together in WWI and fight to stop it. This book has cliffhangers which instantly make you intrigued to read more! I recommend this book to anyone who wants a real adventure and loves to dive into history. The characters in the book all have their own distinct personalities. For example, my favourite character Charlie is bubbly, always on her feet and she always has a wide grin that stretches from ear to ear. Whereas Neesh can be quite shy but wise. Overall, I think this book has its own character, story and I can't wait for Book Three to come!</i>
+                <br>
+                <b>Lila, aged 11</b>
+            </p>
         </div>
     </section>
+    <section class="recent inverted">
+        <div class="recent-right">
+            <h3>Book 1 in the Wrens series</h3>
+            <h2>Wrens: Answering the Call</h2>
+            <p>This novel for readers aged 10 and up is set during the First World War.                 
+                <br>
+                <br>
+                Young Alice Byrd has never had a rebellious bone in her body until she reaches 17 and makes the daring decision to run away from home - or rather to roar away on her trusty motorcycle, Lassie - and become a dispatch rider for the Women's Royal Naval Service (Wrens for short). Soon she has a nickname, Birdie, a group of fantastic friends and a posting to an army camp in northern France. Here she and her new pals must risk their lives daily to deliver vital messages to the trenches, dealing with all the perils of the Front line - bullets, bombs, potholes, German soldiers and more. But who is her friend hiding in the ruined church? And what will happen when Birdie is sent on a top-secret mission? 
+                <br>
+                <br>
+                Answering the Call is the first in a four-book series following Birdie's life story through both the First and Second World Wars, as told by Birdie herself to her great-granddaughter, Amy. As deep family secrets come to light, Amy begins to wonder: is Birdie really the hero she thought she was? Or is she hiding something dark about her past?
+                <br>
+                <br>
+                The novel is published by Mogzilla Books.
+                </p>
+                <div class="btn-group">
+                    <button class="inverted" onclick="window.open('https://www.amazon.co.uk/WRENS-ANSWERING-CALL-Steph-Bellwood/dp/1914426088/')">Buy now on Amazon</button>
+                    <button onclick="window.open('https://mogzillabooks.shop/Wrens-answering-the-call-p645583363')">Buy direct from Mogzilla</button>
+                </div>
+        </div>
+        <div class="recent-left">
+            <div style="background-image: url(cover.jpg)" alt="Front cover"></div>
+            <div style="background-image: url(cover.jpg)" alt="Back cover"></div>
+        </div>
+    </section>
+    
+    
+    <img id="divider" src="divider.png">
+    <section id="about">
+        <div id="about-left">
+            <h2>About me</h2>
+            <p>
+                I write historical fiction for children aged 10 and up, bringing the past to life with a huge array of characters, mostly female - take your pick from daring pirates, fearless suffragettes, intrepid wartime dispatch riders, secret agents, fake 1920s heiresses, so-called "witches," and many more! My stories span a wide range of time periods, from the Tudor era to the First and Second World Wars, and many are inspired by real people and events. 
+            </p>
+            <div class="btn-group">
+                <button onclick="scrollToSection('books')">My most recent novels</button>
+                <button class="inverted" onclick="scrollToSection('short-stories')">My short story collections</button>
+            </div>
+            <p>
+                Alongside fiction, I've also written over a hundred children's non-fiction books on topics including history, geography, science, arts and crafts, cooking, magic tricks, survival skills and more.
+            </p>
+            <div class="btn-group">
+                <button class="inverted" onclick="scrollToSection('non-fiction')">My non-fiction books</button>
+            </div>
+            <p>
+                When I'm not writing, I work in a large primary school in Newcastle-upon-Tyne, where I teach English skills, create lessons and resources, give talks on my writing, run the library and help children fall in love with reading. 
+    <br><br>
+                For me, the Northumberland countryside is the most beautiful place on earth, and I spend as much time walking there as possible - though I do love a sunny trip to Spain!
+            </p>
+        </div>
+        <div id="about-photo"></div>
+    </section>
+    <section id="recommendations">
+        <div id="recommendations-content">
+            <h2>My Book Recommendations</h2>
+            <p>Here are some of my favourite historical children's fiction - some classics, some newer. If you haven't read them, why not give some a go?</p>
+            <ul>
+                <li><strong>The Eagle of the Ninth</strong> by Rosemary Sutcliff</li>
+                <li><strong>Tom's Midnight Garden</strong> by Philippa Pearce</li>
+                <!-- <li><strong>Cosmic</strong> by Frank Cottrell Boyce</li> -->
+                <li><strong>The Machine Gunners</strong> by Robert Westall</li>
+            </ul>
+        </div>
+    </section>
+    <img id="divider" src="divider.png">
+    <section id="non-fiction">
+        <h2>My Non-Fiction Books</h2>
+        <div style="display: block;width: 50%;"></div>
+        <p>Explore my collection of non-fiction books for children (under the name Stephanie Turnbull) on various topics including history, science, crafts, and more.</p>
+        
+        <div id="book-scroller">
+        </div>
+        
+        <div id="book-display">
+            <p>Select a book to view details</p>
+        </div>
+    </section>
+
+    <img id="divider" src="divider.png">
+      
+    <section style="
+    background: url(paper.jpg);
+    background-size: 256px;
+    padding: 70px 30px 10px;
+" id="short-stories"><h2 style="
+">My Short Stories</h2></section>
+
+      <section class="recent paper1">
+        <div class="recent-left">
+          <div style="background-image: url(crimes.webp)"></div>
+          <div style="background-image: url(crimes.webp)"></div>
+        </div>
+        <div class="recent-right">
+          <h3>Out now!</h3>
+          <h2>Women on Trial for... Crimes of their Times</h2>
+          <p>The fascinating tales of six amazing women through history accused of crimes unique to the times they lived in: incredible, heartbreaking, inspirational... and all true.</p>
+          <ul>
+            <li>Anne Askew, the fearless heretic who stood up for her rights in the forbidding court of Henry VIII</li>
+            <li>Alizon Device, the poor girl of Pendle Hill denounced as a witch in the Stuart era</li>
+            <li>Esther Abrahams, the petty 1780s thief bundled off to Australia on a nightmarish convict ship</li>
+            <li>Sophia Duleep Singh, the wealthy goddaughter of Queen Victoria who fought for women's suffrage</li>
+            <li>Dorothy Lawrence, the keen WWI journalist so desperate to report from the front line that she disguised herself as a soldier to get there</li>
+            <li>Kathleen Lonsdale, the conscientious objector in WWII who revolutionised the prison system from within</li>
+          </ul>
+          <button class="inverted" onclick="window.open('https://www.amazon.co.uk/-/en/Steph-Bellwood/dp/1914426037')">Order on Amazon</button>
+        </div>
+      </section>
+      
+      <section class="recent inverted paper1">
+        <div class="recent-right">
+          <h3>Out now!</h3>
+          <h2>The Crimes and Times of... Wicked Wayward Women</h2>
+          <p>Who doesn't love a villain? And these six real-life women were as bad as they get: ruthless, selfish, ambitious... and completely fascinating. Did they get what they deserved - or were they victims themselves of the times they lived in? You decide!</p>
+          <ul>
+            <li>Lady Mary Killigrew, the brazen pirate, smuggler and all-round criminal mastermind</li>
+            <li>Joan Bracey, the rich girl with a taste for adventure who reinvented herself as a highwaywoman</li>
+            <li>Mary Bateman, the self-styled 'Yorkshire Witch' who got rich fast with her devious fortune-telling schemes</li>
+            <li>Christie Edmunds, the delusional Victorian poisoner nicknamed the Chocolate Cream Killer</li>
+            <li>Violet Charlesworth, the early 20th-century con artist who faked an inheritance - and her own death</li>
+            <li>Annie Diamond, the clever, violent and completely terrifying London gangland queen of the 1920s</li>
+          </ul>
+          <button class="inverted" onclick="window.open('https://www.amazon.co.uk/Crimes-Times-Wicked-Wayward-Women/dp/1914426053/')">Order on Amazon</button>
+        </div>
+        <div class="recent-left">
+          <div style="background-image: url(www.webp)"></div>
+          <div style="background-image: url(www.webp)"></div>
+        </div>
+      </section>
+    
+    <footer id="contact">
+        <p>© 2025 Steph Bellwood. For any queries, please email <a style="color: white;" href="mailto:contact@stephbellwood.com">contact@stephbellwood.com</a></p>
+    </footer>
+    
     <script src="script.js"></script>
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 </html>
