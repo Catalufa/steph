@@ -9,6 +9,174 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+/* Mobile-first fixes to drop in below your existing CSS */
+
+/* Make all images and background-image containers reliably responsive */
+img, .cover-container img, .book-container img, #about-photo, .recent-left div {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    box-sizing: border-box;
+}
+
+/* Make nav scrollable on narrow screens rather than wrapping badly */
+nav {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 12px;
+    padding: 10px;
+}
+nav h3, nav p {
+    flex: 0 0 auto;
+    display: inline-block;
+    padding: 6px 8px;
+    white-space: nowrap;
+}
+
+/* Prevent unwanted horizontal overflow */
+html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+
+/* Hide large decorative divider on small screens where it overlaps content */
+@media (max-width: 900px) {
+  #divider { display: none !important; }
+
+  /* Remove heavy repeating backgrounds for clarity and performance */
+  body, section { background: none !important; }
+
+  /* Splash: stack and centre on mobile */
+  section#splash {
+    flex-direction: column !important;
+    align-items: center;
+    padding: 18px 12px;
+    gap: 12px;
+  }
+  #splash > div { width: 100%; height: auto; }
+  #splash-left {
+    align-items: center;
+    text-align: center;
+    padding: 0 12px;
+    order: 2;
+  }
+  #splash-left > h1 { font-size: 2rem; line-height: 2.2rem; text-align:center; }
+  #splash-left > p { max-width: 100%; font-size: 1rem; margin-top: 6px; }
+  #splash-left .btn-group { justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  #splash-right { order: 1; padding-top: 6px; display:flex; justify-content:center; align-items:center; }
+
+  /* Make book-cover images sensible sizes */
+  .cover-container .book img { width: 70%; max-width: 260px; height: auto; margin: 0 auto; display:block; }
+
+  /* Recent/book sections: stack elements vertically */
+  section.recent, section.recent.inverted {
+    flex-direction: column !important;
+    padding: 26px 12px !important;
+    align-items: stretch;
+  }
+  .recent-left, .recent-right { width: 100% !important; padding: 8px 0; box-sizing: border-box; }
+  .recent-right { padding-top: 10px !important; }
+
+  /* Convert the layered covers into a simple side-by-side grid so they don't overlap */
+  .recent-left {
+    display:flex !important;
+    justify-content:center;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .recent-left div {
+    position: relative !important;
+    transform: none !important;
+    width: 45%;
+    max-width: 260px;
+    aspect-ratio: 0.65;
+    border-radius: 6px;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* Remove complex pseudo-element decorations on headings which can overflow */
+  .recent h2::after, .recent.inverted h2::after,
+  #about h2::after, #non-fiction h2::after, #recommendations h2::after, #short-stories h2::after {
+    display: none !important;
+  }
+  .recent h2, .recent.inverted h2, #about h2, #non-fiction h2, #recommendations h2, #short-stories h2 {
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* About section: stack and scale the photo */
+  section#about {
+    padding: 30px 12px !important;
+    gap: 12px;
+    flex-direction: column !important;
+    align-items: center;
+  }
+  #about-left { width: 100% !important; padding: 0 !important; }
+  #about-photo {
+    width: 180px !important;
+    height: 260px !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    -webkit-mask: none !important;
+    filter: none !important;
+    border: 0 !important;
+  }
+
+  /* Quote: reduce decorative quote size and center text */
+  #quote p { padding-left: 12px !important; margin-top: 30px !important; text-align: center; }
+  #quote i::before { font-size: 3rem !important; left: 50% !important; transform: translateX(-50%) !important; top: -1.8rem !important; }
+
+  /* Book scroller and display: smaller heights */
+  #book-scroller { gap: 0.6rem !important; padding: 0.8rem 0 !important; }
+  .book-container { min-width: 140px !important; height: 200px !important; }
+  #book-display { min-height: 300px !important; padding: 1.5rem !important; }
+
+  /* Recommendations list spacing and font-size */
+  #recommendations-content { padding: 0 8px !important; }
+  #recommendations li { font-size: 1rem !important; padding-left: 20px !important; }
+
+  /* Buttons: more finger-friendly, center in groups */
+  button { padding: 12px 16px !important; min-width: 140px !important; font-size: 1rem !important; }
+  .btn-group { justify-content: center !important; }
+
+  /* Footer: smaller padding */
+  footer { padding: 20px 12px !important; text-align: center; }
+}
+
+/* Extra-small screens: tighten things up further */
+@media (max-width: 480px) {
+  nav { padding: 8px !important; }
+  nav h3 { font-size: 1rem !important; margin-right: 6px; }
+  nav p { font-size: 0.95rem !important; padding: 6px 8px !important; }
+
+  #splash-left > h1 { font-size: 1.6rem !important; line-height: 1.9rem !important; }
+  #splash-left > p { font-size: 0.95rem !important; }
+
+  .cover-container .book img { width: 80% !important; max-width: 220px !important; }
+
+  .recent-left div { width: 48% !important; max-width: 160px !important; aspect-ratio: 0.7 !important; }
+  .recent h2 { font-size: 1.4rem !important; padding: 8px 10px !important; }
+  .recent h3 { font-size: 1.05rem !important; }
+
+  #about-photo { width: 140px !important; height: 200px !important; }
+
+  /* Reduce animations and transforms on older/low-power devices to avoid jitter */
+  .recent-left div, .book-container, #about-photo { transition: none !important; transform: none !important; }
+
+  /* Keep layout lighting-fast by removing repeating paper backgrounds */
+  section { background: none !important; }
+}
+
+/* Users on touch-only devices: don't show hover transforms that are useless */
+@media (hover: none) {
+  .recent-left div:hover { transform: none !important; }
+}
+
+/* Final safety: ensure no element causes horizontal scroll */
+body > * { box-sizing: border-box; }
+</style>
+
 </head>
 <body>
     <nav>
