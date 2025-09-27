@@ -9,48 +9,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-<style>
-/* Mobile-first fixes to drop in below your existing CSS */
+<style>@media (max-width: 900px) {
+  /* Mobile-first fixes to drop in below your existing CSS */
 
-/* Make all images and background-image containers reliably responsive */
-/* img, .cover-container img, .book-container img, #about-photo, .recent-left div {
-    box-sizing: border-box;
-} */
+  /* Make all images and background-image containers reliably responsive */
+  /* img, .cover-container img, .book-container img, #about-photo, .recent-left div {
+      box-sizing: border-box;
+  } */
 
-/* Make nav scrollable on narrow screens rather than wrapping badly */
-nav {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 12px;
-    padding: 10px;
-    position: fixed !important;
-    width: 100vw !important;
-    overflow-x: scroll !important;
-    z-index: 9999;
-}
-nav h3, nav p {
-    flex: 0 0 auto;
-    display: inline-block;
-    padding: 6px 8px;
-    white-space: nowrap;
-}
+  /* Make nav scrollable on narrow screens rather than wrapping badly */
+  nav {
+      -webkit-overflow-scrolling: touch;
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 12px;
+      padding: 10px;
+      position: fixed !important;
+      width: 100vw !important;
+      overflow-x: scroll !important;
+      z-index: 9999;
+  }
+  nav h3, nav p {
+      flex: 0 0 auto;
+      display: inline-block;
+      padding: 6px 8px;
+      white-space: nowrap;
+  }
 
-    body {
-        overflow: scroll !important;
-    }
+  body {
+      overflow: scroll !important;
+  }
 
-/* Prevent unwanted horizontal overflow */
-html, body {overflow-x: hidden;overflow-y: hidden;}
-@media (max-width: 900px) {
-    #divider {
-        display: none !important;
-    }
+  /* Prevent unwanted horizontal overflow */
+  html, body {overflow-x: hidden;overflow-y: hidden;}
+  #divider {
+      display: none !important;
+  }
   .cover-container {
       transform: scale(0.9) !important;
       margin-top: 50px !important;
   }
-
 
   /* Splash: stack and centre on mobile */
   section#splash {
@@ -151,43 +149,42 @@ html, body {overflow-x: hidden;overflow-y: hidden;}
 
   /* Footer: smaller padding */
   footer { padding: 20px 12px !important; text-align: center; }
+
+  /* Extra-small screens: tighten things up further */
+  @media (max-width: 480px) {
+    nav { padding: 8px !important; }
+    nav h3 { font-size: 1rem !important; margin-right: 6px; }
+    nav p { font-size: 0.95rem !important; padding: 6px 8px !important; }
+
+    #splash-left > h1 {font-size: 1.6rem !important;line-height: 1.9rem !important;position: relative;}
+    #splash-left > p { font-size: 0.95rem !important; }
+
+    .cover-container .book img {}
+
+    .recent-left div { width: 48% !important; max-width: 160px !important; aspect-ratio: 0.7 !important; }
+    .recent h2 { font-size: 1.4rem !important; padding: 8px 10px !important; }
+    .recent h3 { font-size: 1.05rem !important; }
+
+    #about-photo { width: 140px !important; height: 200px !important; }
+
+    /* Reduce animations and transforms on older/low-power devices to avoid jitter */
+    .recent-left.inView div:last-of-type, .book-container, #about-photo {}
+
+      .recent.inverted .recent-left.inView div:last-of-type {
+          rotate(-8deg) translateX(-40%)
+      ;
+          transform: rotate(8deg) translateX(50%) !important;
+      }
+  }
+
+  /* Users on touch-only devices: don't show hover transforms that are useless */
+  @media (hover: none) {
+    .recent-left div:hover { transform: none !important; }
+  }
+
+  /* Final safety: ensure no element causes horizontal scroll */
+  body > * { box-sizing: border-box; text-align: center !important }
 }
-
-/* Extra-small screens: tighten things up further */
-@media (max-width: 480px) {
-  nav { padding: 8px !important; }
-  nav h3 { font-size: 1rem !important; margin-right: 6px; }
-  nav p { font-size: 0.95rem !important; padding: 6px 8px !important; }
-
-  #splash-left > h1 {font-size: 1.6rem !important;line-height: 1.9rem !important;position: relative;}
-  #splash-left > p { font-size: 0.95rem !important; }
-
-  .cover-container .book img {}
-
-  .recent-left div { width: 48% !important; max-width: 160px !important; aspect-ratio: 0.7 !important; }
-  .recent h2 { font-size: 1.4rem !important; padding: 8px 10px !important; }
-  .recent h3 { font-size: 1.05rem !important; }
-
-  #about-photo { width: 140px !important; height: 200px !important; }
-
-  /* Reduce animations and transforms on older/low-power devices to avoid jitter */
-  .recent-left.inView div:last-of-type, .book-container, #about-photo {}
-
-    .recent.inverted .recent-left.inView div:last-of-type {
-        rotate(-8deg) translateX(-40%)
-    ;
-        transform: rotate(8deg) translateX(50%) !important;
-    }
-}
-    
-
-/* Users on touch-only devices: don't show hover transforms that are useless */
-@media (hover: none) {
-  .recent-left div:hover { transform: none !important; }
-}
-
-/* Final safety: ensure no element causes horizontal scroll */
-body > * { box-sizing: border-box; text-align: center !important }
 </style>
 
 </head>
