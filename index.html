@@ -36,14 +36,13 @@ nav h3, nav p {
 }
 
 /* Prevent unwanted horizontal overflow */
-html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+html, body {overflow-x: hidden;}
 
 /* Hide large decorative divider on small screens where it overlaps content */
 @media (max-width: 900px) {
+  .cover-container {transform: scale(0.9)};
   #divider { display: none !important; }
 
-  /* Remove heavy repeating backgrounds for clarity and performance */
-  body, section { background: none !important; }
 
   /* Splash: stack and centre on mobile */
   section#splash {
@@ -65,7 +64,7 @@ html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
   #splash-right { order: 1; padding-top: 6px; display:flex; justify-content:center; align-items:center; }
 
   /* Make book-cover images sensible sizes */
-  .cover-container .book img { width: 70%; max-width: 260px; height: auto; margin: 0 auto; display:block; }
+  .cover-container .book img {}
 
   /* Recent/book sections: stack elements vertically */
   section.recent, section.recent.inverted {
@@ -85,8 +84,6 @@ html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
     position: relative;
   }
   .recent-left div {
-    position: relative !important;
-    transform: none !important;
     width: 45%;
     max-width: 260px;
     aspect-ratio: 0.65;
@@ -101,8 +98,12 @@ html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
     display: none !important;
   }
   .recent h2, .recent.inverted h2, #about h2, #non-fiction h2, #recommendations h2, #short-stories h2 {
-    width: auto !important;
+    width: auto;
     max-width: 100% !important;
+    text-align: center;
+    font-size: 1.8rem;
+    padding: 20px;
+    transform: translateX(-30px);
   }
 
   /* About section: stack and scale the photo */
@@ -128,8 +129,8 @@ html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
   #quote i::before { font-size: 3rem !important; left: 50% !important; transform: translateX(-50%) !important; top: -1.8rem !important; }
 
   /* Book scroller and display: smaller heights */
-  #book-scroller { gap: 0.6rem !important; padding: 0.8rem 0 !important; }
-  .book-container { min-width: 140px !important; height: 200px !important; }
+  #book-scroller {}
+  .book-container {}
   #book-display { min-height: 300px !important; padding: 1.5rem !important; }
 
   /* Recommendations list spacing and font-size */
@@ -150,10 +151,10 @@ html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
   nav h3 { font-size: 1rem !important; margin-right: 6px; }
   nav p { font-size: 0.95rem !important; padding: 6px 8px !important; }
 
-  #splash-left > h1 { font-size: 1.6rem !important; line-height: 1.9rem !important; }
+  #splash-left > h1 {font-size: 1.6rem !important;line-height: 1.9rem !important;position: relative;}
   #splash-left > p { font-size: 0.95rem !important; }
 
-  .cover-container .book img { width: 80% !important; max-width: 220px !important; }
+  .cover-container .book img {}
 
   .recent-left div { width: 48% !important; max-width: 160px !important; aspect-ratio: 0.7 !important; }
   .recent h2 { font-size: 1.4rem !important; padding: 8px 10px !important; }
@@ -162,11 +163,15 @@ html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
   #about-photo { width: 140px !important; height: 200px !important; }
 
   /* Reduce animations and transforms on older/low-power devices to avoid jitter */
-  .recent-left div, .book-container, #about-photo { transition: none !important; transform: none !important; }
+  .recent-left.inView div:last-of-type, .book-container, #about-photo {}
 
-  /* Keep layout lighting-fast by removing repeating paper backgrounds */
-  section { background: none !important; }
+    .recent.inverted .recent-left.inView div:last-of-type {
+        rotate(-8deg) translateX(-40%)
+    ;
+        transform: rotate(8deg) translateX(50%) !important;
+    }
 }
+    
 
 /* Users on touch-only devices: don't show hover transforms that are useless */
 @media (hover: none) {
@@ -174,7 +179,7 @@ html, body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
 }
 
 /* Final safety: ensure no element causes horizontal scroll */
-body > * { box-sizing: border-box; }
+body > * { box-sizing: border-box; text-align: center !important }
 </style>
 
 </head>
@@ -369,10 +374,10 @@ body > * { box-sizing: border-box; }
       </section>
     
     <footer id="contact">
-        <p>© 2025 Steph Bellwood. For any queries, please email <a style="color: white;" href="mailto:contact@stephbellwood.com">contact@stephbellwood.com</a></p>
+        <p>© 2025 Steph Bellwood. For any queries, please email <a style="color: white;" href="/cdn-cgi/l/email-protection#b8dbd7d6ccd9dbccf8cbccddc8d0daddd4d4cfd7d7dc96dbd7d5"><span class="__cf_email__" data-cfemail="fd9e9293899c9e89bd8e89988d959f9891918a929299d39e9290">[email&#160;protected]</span></a></p>
     </footer>
     
-    <script src="script.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
     <script>
         function scrollToSection(sectionId) {
             const element = document.getElementById(sectionId);
