@@ -17,6 +17,15 @@
       box-sizing: border-box;
   } */
 
+  #school > h2 {
+    left: 40px !important;
+    top: 40px !important;
+  }
+
+  #school-text {
+    max-width: 95%;
+}
+
   /* Make nav scrollable on narrow screens rather than wrapping badly */
   nav {
       -webkit-overflow-scrolling: touch;
@@ -41,7 +50,7 @@
   }
 
   /* Prevent unwanted horizontal overflow */
-  html, body {overflow-x: hidden;overflow-y: hidden;}
+  html, body {overflow-x: hidden;}
   #divider {
       display: none !important;
   }
@@ -296,7 +305,15 @@
         </div>
         <div id="about-photo"></div>
     </section>
-    <section id="recommendations">
+    <img id="divider" src="divider.png">
+        <section id="school" class="recent inverted" style="position: relative; z-index: -1;">
+            <h2 style="left: 20px; position: absolute; top: 70px;">School Visits</h2>
+            <p id="school-text" style="padding-top: 100px !important">I spend a lot of my time visiting schools with the aim of inspiring children to love reading and get creative. For pupils studying the First or Second World War, I focus on my wartime novels through talks and practical workshops, while for others I give fun hints and tips for writing their own brilliant stories. It’s great to hear what children are reading and to share our favourite books! 
+<br><br>This year I’ve also partnered with the National Literacy Trust to promote the National Year of Reading 2026 through events encouraging children to Go All In and read more of what they love.</p>
+<img src="image.png" alt="National Literacy Trust" srcset="" style="width: 200px; margin: 20px auto;">
+    </section>
+    <img id="divider" src="divider.png">
+    <section id="recommendations" style="padding-top: 70px;">
         <div id="recommendations-content">
             <h2>My Book Recommendations</h2>
             <p>Here are some of my favourite historical children's fiction - some classics, some newer. If you haven't read them, why not give some a go?</p>
